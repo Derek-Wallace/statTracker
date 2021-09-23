@@ -7,8 +7,10 @@
     </div>
     <div class="row">
       <div class="col-2 mx-5">
-        <div class="blue-border p-2 d-flex justify-content-center align-items-center">
-          <h2>Game Name</h2>
+        <div role="button" @click="tracker" class="blue-border p-2 d-flex justify-content-center align-items-center">
+          <h2>
+            Game Name
+          </h2>
         </div>
       </div>
     </div>
@@ -16,7 +18,15 @@
 </template>
 
 <script>
+import { router } from '../router'
 export default {
+  setup() {
+    return {
+      tracker() {
+        router.push({ name: 'Tracker' })
+      }
+    }
+  },
   name: 'Home'
 }
 </script>
