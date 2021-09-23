@@ -6,13 +6,16 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-4">
-        <p>stat:</p> <p role="button" @click="increase">
-          Up
-        </p> <p>
+      <div class="col-4 d-flex">
+        <p>stat:</p>
+        <p role="button" class="mx-2" @click="decrease">
+          -
+        </p>
+        <p>
           {{ stat1 }}
-        </p> <p role="button" @click="decrease">
-          Down
+        </p>
+        <p role="button" class="mx-2" @click="increase">
+          +
         </p>
       </div>
     </div>
@@ -26,7 +29,7 @@ import { statService } from '../services/StatService'
 export default {
   setup() {
     return {
-      stat1: computed(AppState.stat1),
+      stat1: computed(() => AppState.stat1),
       increase() {
         statService.increase()
       },
